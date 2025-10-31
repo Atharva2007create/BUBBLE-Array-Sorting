@@ -1,0 +1,43 @@
+// Atharva Pasalkar
+//Computer Engineering
+//CE2 B
+//B25CE1111
+#include <stdio.h>
+struct students{
+ char stu_name[50];
+ int stu_id;
+ int stu_score; };
+int main() {
+    struct students stu[100];
+  int N=3;
+    for(int a=0;a<3;a++){
+        printf("\nEnter your name = ");
+        scanf("%s",stu[a].stu_name);
+        printf("\nEnter your ID = ");
+        scanf("%d",&stu[a].stu_id);
+        printf("\nEnter your test score (Your score will be verified by our team) = \n");
+           scanf("%d",&stu[a].stu_score);
+    }
+
+      struct students rank_stu; 
+    
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            
+            if (stu[j].stu_score < stu[j+1].stu_score) {
+               
+                temp_stu = stu[j];
+                stu[j] = stu[j+1];
+                stu[j+1] = rank_stu;
+            }
+        }
+    }
+     printf("Rank based on marks ! ");
+for(int a=0;a<3;a++)
+{  
+   
+    printf("\nStudent name = %s",stu[a].stu_name);
+    printf("\nStudent ID = %d",stu[a].stu_id);
+    printf("\nStudent Score = %d\n",stu[a].stu_score);
+}return 0;
+}
